@@ -1,0 +1,110 @@
+html,
+body {
+  height: 100%;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 10px;
+  overflow-y: scroll;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: url("../images/grass.jpg");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  color: hsla(0, 0%, 0%, 0.8);
+  font-feature-settings: "kern", "liga", "clig", "calt";
+  font-kerning: normal;
+  font-size: 1.4rem;
+  font-weight: normal;
+  margin: 0;
+  word-wrap: break-word;
+  -moz-font-feature-settings: "kern", "liga", "clig", "calt";
+  -ms-font-feature-settings: "kern", "liga", "clig", "calt";
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-feature-settings: "kern", "liga", "clig", "calt";
+  -webkit-font-smoothing: antialiased;
+}
+
+footer,
+header {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+footer {
+  font-size: 1.4rem;
+  margin: 0 $csg-mNegContainer;
+  padding: 1.5rem 12rem;
+
+  a {
+    color: $white;
+    text-decoration: none;
+  }
+
+  a:active,
+  a:hover,
+  a:visited {
+    color: $white;
+  }
+
+  div,
+  li,
+  ul {
+    display: inline-block;
+  }
+
+  li:after {
+    content: "\00a0 \00a0 |\00a0 \00a0";
+  }
+
+  li:last-child:after {
+    content: "";
+  }
+
+  ul {
+    margin: 0;
+    padding-left: 0;
+    list-style-type: none;
+  }
+
+  .copyright {
+    float: right;
+  }
+}
+
+@include headings {
+  color: $black;
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+
+h1 {
+  font-size: 2.8rem;
+}
+
+h2 {
+  font-size: 2.4rem;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+h4 {
+  font-size: 1.6rem;
+}
+
+h5 {
+  font-size: 1.4rem;
+}
+
+header {
+  margin-left: $csg-mNegContainer;
+  margin-right: $csg-mNegContainer;
+  padding: 0 $csg-mContainer;
+}

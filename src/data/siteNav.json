@@ -1,0 +1,26 @@
+[{
+        "label": "Home",
+        "link": "/",
+        "target": ""
+    },
+    {
+        "label": "Products",
+        "link": "/products",
+        "target": ""
+    },
+    {
+        "label": "Photo Gallery",
+        "link": "http://candsgames.typepad.com/",
+        "target": "_blank"
+    },
+    {
+        "label": "About Us",
+        "link": "/about",
+        "target": ""
+    },
+    {
+        "label": "Contact Us",
+        "link": "/contact",
+        "target": ""
+    }
+]

@@ -10,14 +10,16 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
-import "./layout.css"
+import Footer from "./footer"
+import BannerImage from "../components/bannerimage"
 
-const Layout = ({ children }) => {
+const Layout = ({ children, imgName, altText }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
         siteMetadata {
           title
+          phone
         }
       }
     }
@@ -25,22 +27,18 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
-        }}
-      >
-        <main>{children}</main>
-        <footer style={{
-          marginTop: `2rem`
-        }}>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
-        </footer>
+      <div id="container" class="container-fluid">
+        <Header
+          sitePhone={data.site.siteMetadata?.phone || `Phone`}
+          siteTitle={data.site.siteMetadata?.title || `Title`}
+        />
+        <div id="homeHeader">
+          <BannerImage imgName={imgName} altText={altText} />
+        </div>
+        <content>
+          <div id="contentTop">{children}</div>
+        </content>
+        <Footer siteTitle={data.site.siteMetadata?.title || `Title`} />
       </div>
     </>
   )
@@ -48,6 +46,13 @@ const Layout = ({ children }) => {
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
+  imgName: PropTypes.string,
+  altText: PropTypes.string,
+}
+
+Layout.defaultProps = {
+  imgName: ``,
+  altText: ``,
 }
 
 export default Layout

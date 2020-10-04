@@ -1,0 +1,16 @@
+#container {
+  background-color: $white;
+  margin: 0 auto;
+  padding: 0 $csg-mContainer;
+  position: relative;
+  width: 120rem;
+}
+
+#contentTop {
+  min-height: calc(100vh - 38.1rem);
+  padding: 2rem 0;
+}
+
+#homeHeader {
+  margin: 0 $csg-mNegContainer;
+}

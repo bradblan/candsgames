@@ -1,0 +1,15 @@
+.csg-bg-card {
+  background-color: $csg-cCardBack;
+}
+.csg-card-deck-scrollable {
+  @extend .card-deck;
+  flex-direction: row;
+
+  & > .card {
+    @extend .csg-bg-card;
+    @extend .m-2;
+    @extend .text-white;
+    flex: 0 0 45% !important; /*Change to any size you want*/
+    max-width: 45%;
+  }
+}
