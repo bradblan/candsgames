@@ -14,9 +14,11 @@ import Footer from "./footer"
 import BannerImage from "../components/bannerimage"
 
 const Layout = ({ children, imgName, altText }) => {
-  var oldGallery = document.getElementById("springGallery")
-  if (oldGallery) {
-    oldGallery.parentNode.removeChild(oldGallery)
+  if (typeof window !== `undefined`) {
+    var oldGallery = document.getElementById("springGallery")
+    if (oldGallery) {
+      oldGallery.parentNode.removeChild(oldGallery)
+    }
   }
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
