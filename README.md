@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://candsgames.com">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
+    <img alt="C and S Games" src="./src/images/cornhole_games.jpg" width="60" />
   </a>
 </p>
 <h1 align="center">
