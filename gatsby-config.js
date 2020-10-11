@@ -12,21 +12,13 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     "gatsby-plugin-lodash",
     {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      resolve: `gatsby-plugin-google-fonts-v2`,
       options: {
         fonts: [
           {
             family: `Epilogue`,
-            variants: [
-              `400`,
-              `400i`,
-              `600`,
-              `600i`,
-              `700`,
-              `700i`,
-              `900`,
-              `900i`,
-            ],
+            variable: true,
+            weights: [`400..900`, "400..900"],
           },
         ],
       },
