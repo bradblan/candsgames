@@ -11,6 +11,24 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 
+@media (max-width: 1210px) {
+  html {
+    font-size: 9px;
+  }
+}
+
+@media (max-width: 1035px) {
+  html {
+    font-size: 8px;
+  }
+}
+
+@media (max-width: 780px) {
+  html {
+    font-size: 7px;
+  }
+}
+
 body {
   background: url("../images/grass.jpg");
   background-attachment: fixed;
