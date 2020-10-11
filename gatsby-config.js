@@ -1,4 +1,5 @@
 module.exports = {
+  pathPrefix: "/candsgames",
   siteMetadata: {
     title: `C & S Games`,
     phone: `(270) 792-3249`,
