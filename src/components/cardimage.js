@@ -10,7 +10,7 @@ const CardImage = ({ imgName, altText }) => (
         allImageSharp {
           edges {
             node {
-              fluid(maxWidth: 100) {
+              fluid(maxHeight: 125) {
                 ...GatsbyImageSharpFluid
                 ...GatsbyImageSharpFluidLimitPresentationSize
                 originalName

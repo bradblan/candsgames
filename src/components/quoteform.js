@@ -1,5 +1,5 @@
 import React from "react"
-import { Form, Button, Container } from "react-bootstrap"
+import { Form, Container } from "react-bootstrap"
 
 export default class QuoteForm extends React.Component {
   render() {
@@ -33,9 +33,9 @@ export default class QuoteForm extends React.Component {
               <Form.Label>Design Specifications</Form.Label>
               <Form.Control required as="textarea" rows="3" />
             </Form.Group>
-            <Button variant="primary" size="lg" type="submit">
+            <button class="btn btn-lg csg-btn-action" type="submit">
               Submit
-            </Button>
+            </button>
           </Form>
         </Container>
       </div>

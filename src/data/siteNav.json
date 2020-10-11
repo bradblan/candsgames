@@ -9,9 +9,9 @@
         "target": ""
     },
     {
-        "label": "Photo Gallery",
-        "link": "http://candsgames.typepad.com/",
-        "target": "_blank"
+        "label": "Gallery",
+        "link": "/gallery-entrance",
+        "target": ""
     },
     {
         "label": "About Us",

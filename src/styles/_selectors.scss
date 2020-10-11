@@ -1,5 +1,32 @@
+.card {
+  .card-img-top {
+    margin: auto;
+  }
+}
+
+.circle-image picture img {
+  @extend .rounded-circle;
+  margin: auto;
+}
+
+.contact-picture {
+  margin: auto;
+}
+
 .csg-bg-card {
   background-color: $csg-cCardBack;
+}
+.csg-btn-action {
+  background-color: $csg-cAction;
+  color: $white;
+  font-weight: 600;
+
+  &:active,
+  &:hover,
+  &:focus {
+    background-color: lighten($color: $csg-cAction, $amount: 7%);
+    color: $white;
+  }
 }
 .csg-card-deck-scrollable {
   @extend .card-deck;
@@ -12,4 +39,29 @@
     flex: 0 0 45% !important; /*Change to any size you want*/
     max-width: 45%;
   }
+}
+
+.gallery-link,
+.product-title {
+  a,
+  a:active,
+  a:hover,
+  a:focus {
+    color: $csg-cAction;
+  }
+}
+
+.product-image > a > div {
+  margin: auto;
+}
+
+.product-price {
+  color: $csg-cAction;
+  margin-bottom: 1rem;
+  margin-top: 2rem;
+}
+
+.product-related {
+  max-width: 30rem;
+  min-width: 7.6rem;
 }

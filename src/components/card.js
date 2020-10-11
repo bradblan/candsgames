@@ -1,20 +1,28 @@
 import React from "react"
 import { StaticQuery, graphql, Link } from "gatsby"
+import Img from "gatsby-image"
 import PropTypes from "prop-types"
-import CardImage from "./cardimage"
+import CardText from "./cardtext"
 
-const Card = ({ aTitle }) => (
+const Card = ({ cardId }) => (
   <StaticQuery
     query={graphql`
       query {
-        allMarkdownRemark {
+        allGalleryJson(filter: { card: { eq: "true" } }) {
           edges {
             node {
-              html
-              frontmatter {
-                alt
-                image
-                title
+              id
+              key
+              title
+              alt
+              name
+              src {
+                childImageSharp {
+                  fluid(maxWidth: 125) {
+                    ...GatsbyImageSharpFluid
+                    ...GatsbyImageSharpFluidLimitPresentationSize
+                  }
+                }
               }
             }
           }
@@ -22,8 +30,8 @@ const Card = ({ aTitle }) => (
       }
     `}
     render={data => {
-      const content = data.allMarkdownRemark.edges.find(
-        edge => edge.node.frontmatter.title === aTitle
+      const content = data.allGalleryJson.edges.find(
+        edge => edge.node.id === cardId
       )
       if (!content) {
         return <div class="no-content">No Content</div>
@@ -31,11 +39,11 @@ const Card = ({ aTitle }) => (
       return (
         <div class="card">
           <div class="row no-gutters">
-            <div class="col-3 p-2">
+            <div class="col-3 p-3">
               <Link to="/products">
-                <CardImage
-                  altText={content.node.frontmatter.alt}
-                  imgName={content.node.frontmatter.image}
+                <Img
+                  fluid={content.node.src.childImageSharp.fluid}
+                  alt={content.node.alt}
                 />
               </Link>
             </div>
@@ -43,13 +51,10 @@ const Card = ({ aTitle }) => (
               <div class="card-body">
                 <h4 class="card-title">
                   <Link to="/products" className="text-white">
-                    {content.node.frontmatter.title}
+                    {content.node.title}
                   </Link>
                 </h4>
-                <p
-                  dangerouslySetInnerHTML={{ __html: content.node.html }}
-                  className="card-text"
-                />
+                <CardText keyText={content.node.key} />
               </div>
             </div>
           </div>
@@ -60,7 +65,7 @@ const Card = ({ aTitle }) => (
 )
 
 Card.propTypes = {
-  aTitle: PropTypes.node.isRequired,
+  cardId: PropTypes.node.isRequired,
 }
 
 export default Card

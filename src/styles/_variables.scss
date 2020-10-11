@@ -1,7 +1,8 @@
 // Local variables for C & S Games - all variables prefaced by csg-
 // Key:  c - color; f - font;  m - margin
 
-$csg-cCardBack: darkgreen;
+$csg-cAction: darkgreen;
+$csg-cCardBack: $csg-cAction;
 $csg-fSizeLogoH1: 3.2rem;
 $csg-fSizeLogoH2: 2.4rem;
 $csg-fSizeNav: 1.6rem;

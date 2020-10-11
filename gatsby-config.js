@@ -8,6 +8,7 @@ module.exports = {
   plugins: [
     `gatsby-plugin-preact`,
     `gatsby-plugin-react-helmet`,
+    "gatsby-plugin-lodash",
     {
       resolve: `gatsby-plugin-prefetch-google-fonts`,
       options: {
@@ -29,30 +30,38 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-page-creator`,
+      options: {
+        path: `${__dirname}/src/pages`,
+        ignore: [`**/fragments/*`, `**/markdown/*`],
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
       },
     },
-    `gatsby-transformer-json`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `products`,
+        path: `${__dirname}/src/pages/markdown`,
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/src/data`,
       },
     },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `markdown-fragments`,
-        path: `${__dirname}/src/pages/markdown-fragments`,
-      },
-    },
+    `gatsby-transformer-json`,
     "gatsby-transformer-remark",
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-sass`,
+    `gatsby-plugin-altair-graphql`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
