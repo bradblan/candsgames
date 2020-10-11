@@ -1,9 +1,9 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
+import Img from "gatsby-image"
 
 import SEO from "../components/seo"
 import Layout from "../components/layout"
-import GalleryImage from "../components/galleryimage"
 
 export default function Entrance({ data }) {
   return (
@@ -16,9 +16,11 @@ export default function Entrance({ data }) {
               <div class="col mb-4">
                 <div class="card">
                   <Link to={"/products/" + product.node.key}>
-                    <GalleryImage
-                      imgName={product.node.name}
-                      altText={product.node.alt}
+                    <Img
+                      fluid={product.node.src.childImageSharp.fluid}
+                      alt={product.node.alt}
+                      className="card-img-top"
+                      title="Sample of a custom game"
                     />
                   </Link>
                   <div class="card-body">
@@ -46,6 +48,14 @@ export const query = graphql`
           key
           name
           title
+          src {
+            childImageSharp {
+              fluid(maxWidth: 125) {
+                ...GatsbyImageSharpFluid
+                ...GatsbyImageSharpFluidLimitPresentationSize
+              }
+            }
+          }
         }
       }
     }
