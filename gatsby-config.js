@@ -4,6 +4,7 @@ module.exports = {
     phone: `(270) 792-3249`,
     description: `We are proud to produce high quality custom-made Cornhole games and accessories in Bowling Green, KY.`,
     author: `blblan`,
+    siteUrl: `http://candsgames.com`,
   },
   plugins: [
     `gatsby-plugin-preact`,
@@ -62,6 +63,16 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-plugin-sass`,
     `gatsby-plugin-altair-graphql`,
+    `gatsby-plugin-advanced-sitemap`,
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        // The property ID; the tracking code won't be generated without it
+        trackingId: "UA-180153422-1",
+        // Defines where to place the tracking script - `true` in the head and `false` in the body
+        head: true,
+      },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
