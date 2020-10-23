@@ -22,7 +22,7 @@ export default class QuoteForm extends React.Component {
                 required
                 type="text"
                 size="lg"
-                pattern="/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/"
+                pattern="^[^@\s]+@[^@\s\.]+\.[^@\.\s]+$"
                 placeholder="someone@somewhere.com"
               />
               <Form.Control.Feedback type="invalid" tooltip>
